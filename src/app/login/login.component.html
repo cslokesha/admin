@@ -1,0 +1,66 @@
+<style>
+  aside{
+    display: none !important;
+}
+</style>
+<!--RIGHT CONTENT AREA-->
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="content">
+
+
+      <div class="row">
+        <div class="col-lg-4 mx-auto" style="margin-top:120px;">
+          <div class="card mb-4">
+            <div class="card-body">
+                <div class="login">
+                    <div class="form">
+                        <h3 class="h4 mb-5 text-center">Eha Admin Login</h3>
+                        <form #form="ngForm" (ngSubmit)="post(form.value)">
+                          <div class="form-group">
+                            <label for="">email</label>
+                            <input type="email" name="email"  #em="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  class="form-control" placeholder="enter email" ngModel required >
+                            </div>
+                            <div  *ngIf="em?.touched ">
+                                <div *ngIf="em.errors?.required" style="color: red">
+                            email is required
+                                </div>
+                                <div *ngIf="em.errors?.pattern" style="color: red">
+                                  enter valid email
+                                      </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="">password</label>
+      <input id="password" appPasswordvalidate type="password" placeholder="enter password" name="password" #password="ngModel" pattern="[0-9]*" minlength="8"  maxlength="8" class="form-control" ngModel required >
+      </div>
+      
+      <div  *ngIf="password?.touched ">
+          <div *ngIf="password.errors?.required" style="color: red">
+        password is required
+          </div>
+          <div *ngIf="password.errors?.pattern" style="color: red">
+              password must be number
+                </div>
+                <div *ngIf="password.errors?.minlength" style="color: red">
+                    enter 8 digit number 
+                      </div>
+                          </div>
+                          <button class="btn mt-4 btn-primary btn-lg btn-block" [disabled]="form.invalid">Login</button>
+                        </form>
+              
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<section class="wrapper">
+
+
+
+            
+
+</section>

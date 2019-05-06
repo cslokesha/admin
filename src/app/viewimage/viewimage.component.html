@@ -1,0 +1,72 @@
+<!--RIGHT CONTENT AREA-->
+<app-header></app-header>
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title">Images</h1>
+      </div>
+    </div>
+
+    <div class="content">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card mb-4">
+            <div class="card-header"></div>
+            <div class="card-body table-responsive">
+
+              <table id="products" class="table table-striped mb-4 bg-white table-bordered">
+                <thead>
+                  <tr >
+                      <th>imagesequenceno</th>
+                      <th>imagepath</th>
+                      <th>imagename</th>
+                      <th>header</th>
+                    <th>desc1</th>
+                    <th>desc2</th>
+                    <th>desc3</th>
+                    <th>desc4</th>
+                    <th>desc5</th>
+                   
+                   
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let image of imagelist">
+                      <td>{{image.imageSequenceNo}}</td>
+                      <td>{{image.imagePath}}</td>
+                      <td>{{image.imageName}}</td>
+                      <td>{{image.header}}</td>
+                    <td>{{image.desc1}}</td>
+                   
+                    <td>{{image.desc2}}</td>
+                    <td>{{image.desc3}}</td>
+                   
+                    <td>{{image.desc4}}</td>
+                    <td>{{image.desc5}}</td>
+                   
+                   
+                    
+                    <td>
+                      <a href="javascript:;" class="btn btn-primary btn-sm mr-2" (click)="editimage(image)" routerLink="/updatecategory">
+                        Edit
+                      </a>
+                      <a href="javascript:;" class="btn btn-danger btn-sm"(click)="delete(image.imageId)">
+                       Delete
+                      </a>
+                    </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              <a routerLink="/addimage" style="margin-left:10cm">Add Image</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

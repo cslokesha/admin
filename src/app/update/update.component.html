@@ -1,0 +1,50 @@
+<!--RIGHT CONTENT AREA-->
+<app-header></app-header>
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title">Update Banner</h1>
+      </div>
+    </div>
+
+    <div class="content">
+                <div class="card">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                      <form #updateForm="ngForm"  (ngSubmit)="validation(updateForm.value)">
+                        <div class="row">
+                            <div class="col-lg-6">
+                          <div class="needs-validation" novalidate>
+                            <div class="form-group">
+                              <label class="font-weight-bold">BannerName</label> 
+                              <input type="text" id="bannerName" name="bannerName" class="form-control"  fromControlName="bannerName" placeholder="Enter bannerName" required [(ngModel)]="bannerName">
+                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                              </div>
+                                <div class="form-group"  style="display: none">
+                                  <label class="font-weight-bold">bannerId</label>
+                                  <input type="text" id="bannerId" name="bannerId" class="form-control"  fromControlName="bannerId" placeholder="Enter bannerId" required [(ngModel)]="bannerId">
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                </div>
+
+                            <div class="form-group">
+                              <label class="font-weight-bold">BannerArea</label>
+                              <input type="text" id="bannerArea" name="bannerArea" class="form-control"  fromControlName="bannerArea" placeholder="Enter bannerArea" required [(ngModel)]="bannerArea">
+                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                            </div>
+                          
+                                      <div class="form-group">
+                                        <button type="submit" style="margin-right: 5cm" class="btn btn-success">Update Banner</button>
+                                      </div>
+                                    </div></div>
+                                  
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+  </div>

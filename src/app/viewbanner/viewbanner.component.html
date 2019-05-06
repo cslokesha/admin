@@ -1,0 +1,54 @@
+<!--RIGHT CONTENT AREA-->
+<app-header></app-header>
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title">Banners</h1>
+      </div>
+    </div>
+
+    <div class="content">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card mb-4">
+            <div class="card-header"></div>
+            <div class="card-body table-responsive">
+
+              <table id="products" class="table table-striped mb-4 bg-white table-bordered">
+                <thead>
+                  <tr >
+                    <th>bannerName</th>
+                   
+                    <th>bannerArea</th>
+                    
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let banner of bannerlist">
+                    <td>{{banner.bannerName}}</td>
+                   
+                    <td>{{banner.bannerArea}}</td>
+                    <td>
+                      <a href="javascript:;" class="btn btn-primary btn-sm mr-2" (click)="editbanner(banner)" routerLink="/updatecategory">
+                       Edit
+                      </a>
+                      <a href="javascript:;" class="btn btn-danger btn-sm"(click)="delete(banner.bannerId)">
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              <a routerLink="/addbanner" style="margin-left:10cm">Add Banner</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

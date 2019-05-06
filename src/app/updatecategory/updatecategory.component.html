@@ -1,0 +1,48 @@
+
+<app-header></app-header>
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title">Update Category</h1>
+      </div>
+    </div>
+
+    <div class="content">
+                <div class="card">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                      <form #updateForm="ngForm"  (ngSubmit)="validation(updateForm.value)">
+                        <div class="row">
+                            <div class="col-lg-6">
+                          <div class="needs-validation" novalidate>
+                            <div class="form-group">
+                              <label class="font-weight-bold">categoryName</label> 
+                              <input type="text" id="categoryName" name="categoryName" class="form-control" style="width: 10cm"  fromControlName="categoryName" placeholder="Enter categoryName" required [(ngModel)]="categoryName">
+                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                              </div>
+                                <div class="form-group"  style="display: none">
+                                  <label class="font-weight-bold">categoryId</label>
+                                  <input type="text" id="categoryId" name="categoryId" class="form-control"  fromControlName="categoryId" placeholder="Enter categoryId" required [(ngModel)]="categoryId">
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                </div>
+                                <h6>Description</h6>
+                                <div class="form-group">
+                               
+                                  <textarea cols="50" rows="4" name="description" [(ngModel)]="description"></textarea>
+                                </div>
+                                      <div class="form-group">
+                                        <button type="submit" style="margin-right: 5cm" class="btn btn-success">Update Category</button>
+                                      </div>
+                                    </div></div>
+                                  
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+  </div>

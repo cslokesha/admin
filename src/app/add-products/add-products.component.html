@@ -1,0 +1,215 @@
+<!--RIGHT CONTENT AREA-->
+<app-header></app-header>
+<div class="content-area">
+    <div class="content-wrapper">
+  
+      <div class="row page-tilte align-items-center">
+        <div class="col-md-auto">
+          <h1 class="weight-300 h3 title">Add Product</h1>
+        </div>
+      </div>
+  
+      <div class="content">
+                  <div class="card">
+                      <div class="card-header">Add Product</div>
+                      <div class="card-body">
+                          <form #form="ngForm"  (ngSubmit)="validation(form.value)">
+                          <div class="row">
+                              <div class="col-lg-6">
+                            <div class="needs-validation" novalidate>
+                              <div class="form-group">
+                                  <label class="font-weight-bold">Discount</label>
+                                  <input type="text" class="form-control" name="discount" #dis="ngModel" pattern="[0-9]*" ngModel placeholder="Enter discount" required>
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                </div>
+                                <div  *ngIf="dis?.touched ">
+        
+                                    <div *ngIf="dis.errors?.pattern" style="color: red">
+                                        discount must be number
+                                          </div>
+                                          
+                                                    </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Sku</label>
+                                    <input type="text" class="form-control" name="sku" ngModel placeholder="Enter discount" required>
+                                    <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Product Price</label>
+                                    <input type="text" class="form-control" name="price"  #price="ngModel" pattern="[0-9]*" minlength="1" maxlength="6" ngModel placeholder="Enter product price" required>
+                                    <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+                                  <div  *ngIf="price?.touched ">
+        
+                                      <div *ngIf="price.errors?.pattern" style="color: red">
+                                          price must be number
+                                            </div>
+                                            
+                                                      </div>
+                              <div class="form-group">
+                                <label class="font-weight-bold">Product Description</label>
+                                <input class="form-control" name="collectionDesc"  ngModel  required>
+                                <small class="invalid-feedback">
+                                    Please provide a valid Adress.
+                                  </small>
+                              </div>
+                              <div class="form-group">
+                                  <label class="font-weight-bold">Product Color</label>
+                                  <input type="text" class="form-control" name="colors" ngModel placeholder="Enter product color" required>
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Product Stock</label>
+                                    <input type="text" class="form-control" name="inStock" #stk="ngModel" pattern="[0-9]*" ngModel placeholder="Enter Stock" required>
+                                    <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+                                  <div  *ngIf="stk?.touched ">
+        
+                                      <div *ngIf="stk.errors?.pattern" style="color: red">
+                                          Stock must be number
+                                            </div>
+                                            
+                                                      </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Occassion</label>
+                                    <select id="inputState" class="form-control" name="occassion" ngModel>
+                                        <option selected>Choose...</option>
+                                        <option>Wedding</option>
+                                        <option>Function</option>
+                                      </select>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="font-weight-bold">Material</label>
+                                      <select id="inputState" class="form-control" name="materialType" ngModel>
+                                          <option selected>Choose...</option>
+                                          <option>Silk</option>
+                                          <option>Cotton</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Fabric Purity</label>
+                                        <select id="inputState" class="form-control" name="fabricPurity" ngModel>
+                                            <option selected>Choose...</option>
+                                            <option>Pure</option>
+                                            <option>Silky</option>
+                                          </select>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="font-weight-bold">Pattern</label>
+                                          <select id="inputState" class="form-control" name="pattern" ngModel>
+                                              <option selected>Choose...</option>
+                                              <option>Zari Butia</option>
+                                              <option>Cotton</option>
+                                            </select>
+                                        </div>
+                                      </div></div>
+                                            <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bold">Border</label>
+                                            <select id="inputState" class="form-control" name="border" ngModel>
+                                                <option selected>Choose...</option>
+                                                <option>Zari Border</option>
+                                                <option>Cotton</option>
+                                              </select>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="font-weight-bold">Border Type</label>
+                                              <select id="inputState" class="form-control" name="borderType"ngModel>
+                                                  <option selected>Choose...</option>
+                                                  <option>Bright</option>
+                                                  <option>Contrast</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Zari Type</label>
+                                                <select id="inputState" class="form-control" name="zariType"ngModel>
+                                                    <option selected>Choose...</option>
+                                                    <option>Pure Zari</option>
+                                                    <option>Zari</option>
+                                                  </select>
+                                              </div>
+                                              <div class="form-group">
+                                                  <label class="font-weight-bold">Length</label>
+                                                  <select id="inputState" class="form-control" name="length" ngModel>
+                                                      <option selected>Choose...</option>
+                                                      <option>4</option>
+                                                      <option>45</option>
+                                                    </select>
+                                                </div>
+                                                <!-- <div class="form-group">
+                                                    <label class="font-weight-bold">Blouse</label>
+                                                    <select id="inputState" class="form-control">
+                                                        <option selected>Choose...</option>
+                                                        <option>Contrast</option>
+                                                        <option>Zari</option>
+                                                      </select>
+                                                  </div> -->
+                                                  <div class="form-group">
+                                                      <label class="font-weight-bold">Blouse Color</label>
+                                                      <input type="text" class="form-control" placeholder="Enter blouse color" name="blouseColor" ngModel required>
+                                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                                    </div>
+                                                    <!-- <div class="form-group">
+                                                        <label class="font-weight-bold">Header desc</label>
+                                                        <input type="text" class="form-control" placeholder="Enter headerDesc" name="headerDesc" ngModel required>
+                                                        <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                                      </div> -->
+                                                      <h6>Header desc</h6>
+                                                      <div class="form-group">
+                                                     
+                                                        <textarea cols="50" rows="4" name="headerDesc" ngModel></textarea>
+                                                      </div>
+                                                    <div class="form-group">
+                                                        <label class="font-weight-bold">Blouse Length</label>
+                                                        <select id="inputState" class="form-control" name="blouseLength" ngModel>
+                                                            <option selected>Choose...</option>
+                                                            <option>4</option>
+                                                            <option>3</option>
+                                                          </select>
+                                                      </div>
+                                                      <!-- <div class="form-group">
+                                                          <label class="font-weight-bold">Upload Product Images</label>
+                                                          <div class="input-group mb-3">
+                                                              <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                              </div>
+                                                            </div>
+                                                            <a href="javascript:;" class="btn btn-primary btn-sm"><i class="fa fa-plus mr-2"></i>Add Image</a>
+                                                        </div> -->
+                                                        <div class="form-group">
+                                                            <label class="font-weight-bold">Product image</label>
+                                                            <input type="text" class="form-control" name="mainImageUrl" ngModel placeholder="Enter Stock" required>
+                                                            <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                                          </div>
+                                                          <div class="form-group">
+                                                              <label class="font-weight-bold">Product subImage</label>
+                                                              <input type="text" class="form-control" name="imagePath" ngModel placeholder="Enter Stock" required>
+                                                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                                            </div>
+                                                            
+                              <div class="form-group">
+                                  <label class="font-weight-bold">Select Category Name</label>
+                                  <select id="categoryName" name="categoryName" ngModel >  
+                                    <option value=""disabled selected ><i class="fa fa-search" style="font-size:36px"></i>Choose Category Name</option>
+                            
+                                    <option *ngFor="let catagory of categorylist" >{{catagory.categoryName}}</option>
+                                  </select>
+                                </div>
+                                                        <div class="form-group">
+                                                            <button class="btn btn-success" [disabled]="form.invalid">Add Product</button>
+                                                          </div>
+
+
+
+
+                              
+                            </div>
+
+                      </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+    </div>
+   

@@ -1,0 +1,105 @@
+<app-header></app-header>
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title" style="margin-left: 3cm">Add Image</h1>
+      </div>
+    </div>
+
+    <div class="content" style="width: 18cm">
+                <div class="card">
+                    <div class="card-header"></div>
+                    <div class="card-body"  style="margin-left: 2cm;width: 10cm">
+                      <form #form="ngForm"  (ngSubmit)="validation(form.value)">
+                          <div class="form-group">
+                              <label class="font-weight-bold">ImageName</label>
+                              <input type="text" id="imageName" name="imageName" class="form-control"  fromControlName="imageName" placeholder="Enter imageName" required ngModel>
+                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                            </div>
+                            <div>
+                                <label class="font-weight-bold">ImagePath</label>
+                                <input type="text" id="imagePath" name="imagePath" class="form-control"  fromControlName="imagePath" placeholder="Enter imagePath" required ngModel>
+                                <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                              </div>
+                              <div class="form-group">
+                                  <label class="font-weight-bold">Imageheader</label>
+                                  <input type="text" id="header" name="header" class="form-control"  fromControlName="header" placeholder="Enter header" required ngModel>
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                </div>
+                              <div class="form-group">
+                                  <label class="font-weight-bold">ImageSequenceNo</label>
+                                  <input type="text" id="imageSequenceNo" #seq="ngModel" pattern="[0-9]*" name="imageSequenceNo" class="form-control"  fromControlName="imageSequenceNo" placeholder="Enter imageSequenceNo" required ngModel>
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                </div>
+                                <div  *ngIf="seq?.touched ">
+          
+            <div *ngIf="seq.errors?.pattern" style="color: red">
+                ImageSequenceNo must be number
+                  </div>
+                  
+                            </div>
+                              <div class="form-group">
+                                  <label class="font-weight-bold">Select Category Name</label><br>
+                                  <select id="categoryName" name="categoryName" ngModel >  
+                                    <option value=""disabled selected ><i class="fa fa-search" style="font-size:36px"></i>Choose Category Name</option>
+                            
+                                    <option *ngFor="let catagory of categorylist" >{{catagory.categoryName}}</option>
+                                  </select>
+                                </div>
+                                
+                              <div class="form-group">
+                                  <label class="font-weight-bold">Select bannerArea</label><br>
+                                  <select id="bannerArea" name="bannerArea" ngModel >  
+                                    <option value=""disabled selected ><i class="fa fa-search" style="font-size:36px"></i>Choose bannerArea</option>
+                            
+                                    <option *ngFor="let banner of bannerlist" >{{banner.bannerArea }}</option>
+                                  </select>
+                                </div>
+                      
+                            <div class="col-lg-6">
+                          <div class="needs-validation" novalidate>
+                              <h6>Description1</h6>
+                              <div class="form-group">
+                             
+                                <textarea cols="50" rows="4" name="desc1" ngModel></textarea>
+                              </div>
+                             
+                              <h6>Description2</h6>
+                              <div class="form-group">
+                             
+                                <textarea cols="50" rows="4" name="desc2" ngModel></textarea>
+                              </div>
+                              <h6>Description3</h6>
+                              <div class="form-group">
+                             
+                                <textarea cols="50" rows="4" name="desc3" ngModel></textarea>
+                              </div>
+                               
+                              <h6>Description4</h6>
+                              <div class="form-group">
+                             
+                                <textarea cols="50" rows="4" name="desc4" ngModel></textarea>
+                              </div>
+                              <h6>Description5</h6>
+                              <div class="form-group">
+                             
+                                <textarea cols="50" rows="4" name="desc5" ngModel></textarea>
+                              </div>
+                             
+                      
+                                      <div class="form-group" style="margin-left: 2cm">
+                                        <button type="submit"  class="btn btn-success" [disabled]="form.invalid">Add Image</button>
+                                      </div>
+                                    </div></div>
+                                        
+
+                    
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+  </div>

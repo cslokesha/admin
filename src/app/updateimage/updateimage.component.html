@@ -1,0 +1,99 @@
+<app-header></app-header>
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title">Update Image</h1>
+      </div>
+    </div>
+
+    <div class="content">
+                <div class="card">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                      <form #form="ngForm"  (ngSubmit)="validation(form.value)">
+                        <div class="row">
+                            <div class="col-lg-6">
+                          <div class="needs-validation" novalidate>
+                              <div class="form-group" style="display: none">
+                                  <label class="font-weight-bold">imageId</label> 
+                                  <input type="text" id="imageId" name="imageId" style="width: 10cm" class="form-control"  fromControlName="imageId" placeholder="Enter imageId" required [(ngModel)]="imageId">
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="font-weight-bold">ImageName</label>
+                                      <input type="text" id="imageName" name="imageName" style="width: 10cm" class="form-control"  fromControlName="imageName" placeholder="Enter imageName" required [(ngModel)]="imageName">
+                                      <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                    </div>
+    
+                                    <div>
+                                    <label class="font-weight-bold">ImagePath</label>
+                                    <input type="text" id="imagePath" name="imagePath" style="width: 10cm" class="form-control"  fromControlName="imagePath" placeholder="Enter imagePath" required [(ngModel)]="imagePath">
+                                    <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+                                   
+                                  <div class="form-group">
+                                    <label class="font-weight-bold">ImageSequenceNo</label>
+                                    <input type="text" id="imageSequenceNo" #seq="ngModel" style="width: 10cm" pattern="[0-9]*" name="imageSequenceNo" class="form-control"  fromControlName="imageSequenceNo" placeholder="Enter imageSequenceNo" required [(ngModel)]="imageSequenceNo">
+                                    <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                  </div>
+                                  <div  *ngIf="seq?.touched ">
+            
+              <div *ngIf="seq.errors?.pattern" style="color: red">
+                  imageSequenceNo must be number
+                    </div>
+                    
+                              </div>
+                              <div class="form-group">
+                                  <label class="font-weight-bold">Header</label>
+                                  <input type="text" id="header" name="header" class="form-control" style="width: 10cm" fromControlName="header" placeholder="Enter header" required [(ngModel)]="header">
+                                  <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                                </div>
+                                <h6>Description1</h6>
+                                <div class="form-group">
+                               
+                                  <textarea cols="50" rows="4" name="desc1" [(ngModel)]="desc1"></textarea>
+                                </div>
+                             
+                                <h6>Description2</h6>
+                                <div class="form-group">
+                               
+                                  <textarea cols="50" rows="4" name="desc2" [(ngModel)]="desc2"></textarea>
+                                </div>
+                                <h6>Description3</h6>
+                                <div class="form-group">
+                               
+                                  <textarea cols="50" rows="4" name="desc3" [(ngModel)]="desc3"></textarea>
+                                </div>
+                               
+                                <h6>Description4</h6>
+                                <div class="form-group">
+                               
+                                  <textarea cols="50" rows="4" name="desc4" [(ngModel)]="desc4"></textarea>
+                                </div>
+                                <h6>Description5</h6>
+                                <div class="form-group">
+                               
+                                  <textarea cols="50" rows="4" name="desc5" [(ngModel)]="desc5"></textarea>
+                                </div>
+                               
+    
+                                 
+                             
+                      
+                           
+                                      <div class="form-group">
+                                        <button type="submit" style="margin-right: 5cm" class="btn btn-success" [disabled]="form.invalid">Update Image</button>
+                                      </div>
+                                    </div></div>
+                                        
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+  </div>

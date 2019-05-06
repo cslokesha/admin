@@ -1,0 +1,89 @@
+<!--RIGHT CONTENT AREA-->
+<app-header></app-header>
+<div class="content-area">
+    <div class="content-wrapper">
+  
+      <div class="row page-tilte align-items-center">
+        <div class="col-md-auto">
+          <h1 class="weight-300 h3 title">Products</h1>
+        </div>
+      </div>
+  
+      <div class="content" style="margin-right: 5cm">
+  
+  <div class="row">
+          <div class="col-lg-12">
+            <div class="card mb-4">
+              <div class="card-header">View Products</div>
+              <div class="card-body table-responsive">
+  
+                <table id="products" class="table table-striped mb-4 bg-white table-bordered">
+                  <thead>
+                    <tr>
+                      <th>categoryName</th>
+                      <th>Sku</th>
+                      <th>Stock</th>
+                      <th>price</th>
+                      <th>Discount</th>
+                      <th>subImageList</th>
+                      <th>blouseColor</th>
+                      <th>blouseLength</th>
+                      <th>border</th>
+                      <th>borderType</th>
+                      <th>collectionDesc</th>
+                      <th>colors</th>
+                      <th>fabricPurity</th>
+                      <th>headerDesc</th>
+                      <th>length</th>
+                      <th>materialType</th>
+                      <th>occassion</th>
+                      <th>pattern</th>
+                      <th>zariType</th>
+                      <th>MainimagePath</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of productlist">
+                        <td>{{product.categoryName}}</td>
+                        <td>{{product.sku}}</td>
+                        <td>{{product.inStock}}</td>
+                        <td>₹ {{product.price}}</td>
+                        <td>{{product.discount}}%</td>
+                        <td>{{product.subImageList}}</td>
+                        <td>{{product.blouseColor}}</td>
+                        <td>{{product.blouseLength}}</td>
+                        <td>{{product.border}}</td>
+                        <td>{{product.borderType}}</td>
+                        <td>{{product.collectionDesc}}</td>
+                        <td>{{product.colors}}</td>
+                        <td>{{product.fabricPurity}}</td>
+                        <td>{{product.headerDesc}}</td>
+                        <td>{{product.length}}</td>
+                        <td>{{product.materialType}}</td>
+                        <td>{{product.occassion}}</td>
+                        <td>{{product.pattern}}</td>
+                        <td>{{product.zariType}}</td>
+                        <td>{{product.mainImageUrl}}</td>
+                        
+                      <td>
+                        <a href="javascript:;" class="btn btn-primary btn-sm " (click)="editproduct(product)"  routerLink="/upadateproduct">
+                          Edit
+                        </a>
+                        <a href="javascript:;" class="btn btn-danger btn-sm">
+                        Delete
+                        </a>
+                       
+                      </td>
+                    </tr>
+                  </tbody>
+                  <a href="javascript:;"  routerLink="/add-products">
+                    Addproduct
+                    </a>
+                </table>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,45 @@
+<!--RIGHT CONTENT AREA-->
+<app-header></app-header>
+<div class="content-area">
+  <div class="content-wrapper">
+
+    <div class="row page-tilte align-items-center">
+      <div class="col-md-auto">
+        <h1 class="weight-300 h3 title">Add Banner</h1>
+      </div>
+    </div>
+
+    <div class="content">
+                <div class="card">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                      <form #form="ngForm"  (ngSubmit)="validation(form.value)">
+                        <div class="row">
+                            <div class="col-lg-6">
+                          <div class="needs-validation" novalidate>
+                            <div class="form-group">
+                              <label class="font-weight-bold">BannerArea</label> 
+                              <input type="text" id="bannerArea" name="bannerArea" class="form-control"  fromControlName="bannerArea" placeholder="Enter bannerArea" required ngModel>
+                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                              </div>
+                             
+                            <div class="form-group">
+                              <label class="font-weight-bold">BannerName</label>
+                              <input type="text" id="bannerName" name="bannerName" class="form-control"  fromControlName="bannerName" placeholder="Enter bannerName" required ngModel>
+                              <small id="emailHelp" class="invalid-feedback">Field can't be empty</small>
+                            </div>
+                           
+                                      <div class="form-group">
+                                        <button type="submit" style="margin-right: 5cm" class="btn btn-success" [disabled]="form.invalid">Add Banner</button>
+                                      </div>
+                                    </div></div>
+                                        
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+  </div>
